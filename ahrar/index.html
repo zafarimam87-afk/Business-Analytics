@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahrar's Learning Galaxy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="stars"></div>
+  <div id="shooting-stars"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header id="main-header">
+    <div class="header-left">
+      <button id="home-btn" class="home-btn" onclick="App.showHome()" title="Go Home">
+        <span class="rocket-spin">🚀</span>
+        <span class="logo-text">Ahrar's Galaxy</span>
+      </button>
+    </div>
+    <div class="header-right">
+      <div class="stat-chip"><span>⚡</span><span id="header-xp">0 XP</span></div>
+      <div class="stat-chip"><span>🏆</span><span id="header-level">Level 1</span></div>
+      <div class="stat-chip"><span>🔥</span><span id="header-streak">0 day streak</span></div>
+    </div>
+  </header>
+
+  <!-- ===== HOME SCREEN ===== -->
+  <main>
+    <div id="home-screen" class="screen active">
+      <div class="welcome-section">
+        <div class="welcome-avatar" id="welcome-avatar">👨‍🚀</div>
+        <div class="welcome-words">
+          <h1>Hello, <span class="glow-name">Ahrar!</span> 🌟</h1>
+          <p class="welcome-sub">Born Explorer · Space Scientist · Artist · Karate Kid</p>
+        </div>
+      </div>
+
+      <div class="xp-progress-bar">
+        <div class="xp-labels">
+          <span id="home-level-label">Level 1 — Space Cadet</span>
+          <span id="home-xp-label">0 / 100 XP</span>
+        </div>
+        <div class="xp-track">
+          <div class="xp-fill" id="home-xp-fill" style="width:0%"></div>
+        </div>
+      </div>
+
+      <div class="achievements-row" id="achievements-row"></div>
+
+      <div class="modules-grid">
+        <div class="module-card" data-module="about" style="--c:#FFD700">
+          <div class="card-glow"></div>
+          <div class="card-emoji">👦</div>
+          <div class="card-info">
+            <div class="card-title">About Ahrar</div>
+            <div class="card-desc">My profile, photos & trophies</div>
+          </div>
+          <div class="card-progress" id="prog-about">
+            <div class="mini-bar"><div class="mini-fill" style="width:0%"></div></div>
+          </div>
+        </div>
+
+        <div class="module-card" data-module="my-drawings" style="--c:#FF69B4">
+          <div class="card-glow"></div>
+          <div class="card-emoji">🎨</div>
+          <div class="card-info">
+            <div class="card-title">My Drawings</div>
+            <div class="card-desc">Gallery of my artwork</div>
+          </div>
+          <div class="card-progress" id="prog-my-drawings">
+            <div class="mini-bar"><div class="mini-fill" style="width:0%"></div></div>
+          </div>
+        </div>
+
+        <div class="module-card" data-module="python" style="--c:#00FF88">
+          <div class="card-glow"></div>
+          <div class="card-emoji">🐍</div>
+          <div class="card-info">
+            <div class="card-title">Python Coder</div>
+            <div class="card-desc">Code games & missions</div>
+          </div>
+          <div class="card-progress" id="prog-python">
+            <div class="mini-bar"><div class="mini-fill" style="width:0%"></div></div>
+          </div>
+        </div>
+
+        <div class="module-card" data-module="math" style="--c:#4FC3F7">
+          <div class="card-glow"></div>
+          <div class="card-emoji">🔢</div>
+          <div class="card-info">
+            <div class="card-title">Math Adventure</div>
+            <div class="card-desc">Numbers & brain teasers</div>
+          </div>
+          <div class="card-progress" id="prog-math">
+            <div class="mini-bar"><div class="mini-fill" style="width:0%"></div></div>
+          </div>
+        </div>
+
+        <div class="module-card" data-module="science" style="--c:#FF8C00">
+          <div class="card-glow"></div>
+          <div class="card-emoji">🔬</div>
+          <div class="card-info">
+            <div class="card-title">Science Lab</div>
+            <div class="card-desc">Animals, nature & beyond</div>
+          </div>
+          <div class="card-progress" id="prog-science">
+            <div class="mini-bar"><div class="mini-fill" style="width:0%"></div></div>
+          </div>
+        </div>
+
+        <div class="module-card" data-module="space" style="--c:#AA00FF">
+          <div class="card-glow"></div>
+          <div class="card-emoji">🚀</div>
+          <div class="card-info">
+            <div class="card-title">Space Explorer</div>
+            <div class="card-desc">Planets, stars & cosmos</div>
+          </div>
+          <div class="card-progress" id="prog-space">
+            <div class="mini-bar"><div class="mini-fill" style="width:0%"></div></div>
+          </div>
+        </div>
+
+        <div class="module-card" data-module="karate" style="--c:#FF3333">
+          <div class="card-glow"></div>
+          <div class="card-emoji">🥋</div>
+          <div class="card-info">
+            <div class="card-title">Karate Dojo</div>
+            <div class="card-desc">Belt path & techniques</div>
+          </div>
+          <div class="card-progress" id="prog-karate">
+            <div class="mini-bar"><div class="mini-fill" style="width:0%"></div></div>
+          </div>
+        </div>
+
+        <div class="module-card" data-module="drawing-learn" style="--c:#00BCD4">
+          <div class="card-glow"></div>
+          <div class="card-emoji">✏️</div>
+          <div class="card-info">
+            <div class="card-title">Drawing Studio</div>
+            <div class="card-desc">Learn to draw step by step</div>
+          </div>
+          <div class="card-progress" id="prog-drawing-learn">
+            <div class="mini-bar"><div class="mini-fill" style="width:0%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== MODULE SCREEN ===== -->
+    <div id="module-screen" class="screen hidden">
+      <div class="module-topbar">
+        <button class="back-btn" onclick="App.showHome()">&#8592; Home</button>
+        <span class="module-breadcrumb" id="module-breadcrumb"></span>
+      </div>
+      <div id="module-content"></div>
+    </div>
+  </main>
+
+  <!-- ===== ACHIEVEMENT TOAST ===== -->
+  <div id="achievement-toast" class="achievement-toast hidden">
+    <div class="toast-body">
+      <div class="toast-icon" id="toast-icon">🏆</div>
+      <div>
+        <div class="toast-title">Achievement Unlocked!</div>
+        <div class="toast-desc" id="toast-desc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== QUIZ MODAL ===== -->
+  <div id="quiz-modal" class="modal-overlay hidden" onclick="Quiz.closeOnOverlay(event)">
+    <div class="modal-box" id="quiz-box">
+      <button class="modal-close-btn" onclick="Quiz.close()">&#10005;</button>
+      <div class="quiz-meta">
+        <div class="quiz-counter">Q <span id="qz-num">1</span> / <span id="qz-total">5</span></div>
+        <div class="quiz-score-tag">Score: <span id="qz-score">0</span></div>
+      </div>
+      <div class="quiz-q" id="qz-question">Question goes here</div>
+      <div class="quiz-opts" id="qz-options"></div>
+      <div class="quiz-feedback" id="qz-feedback"></div>
+      <button class="quiz-next-btn hidden" id="qz-next" onclick="Quiz.next()">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- ===== FLASHCARD MODAL ===== -->
+  <div id="fc-modal" class="modal-overlay hidden" onclick="Flashcard.closeOnOverlay(event)">
+    <div class="modal-box fc-box">
+      <button class="modal-close-btn" onclick="Flashcard.close()">&#10005;</button>
+      <div class="fc-counter"><span id="fc-num">1</span> / <span id="fc-total">10</span></div>
+      <div class="fc-scene" onclick="Flashcard.flip()">
+        <div class="fc-card" id="fc-card">
+          <div class="fc-front" id="fc-front">Click to flip!</div>
+          <div class="fc-back" id="fc-back">Answer</div>
+        </div>
+      </div>
+      <div class="fc-controls">
+        <button class="fc-btn" onclick="Flashcard.prev()">&#9664; Prev</button>
+        <button class="fc-btn fc-flip-btn" onclick="Flashcard.flip()">&#8635; Flip</button>
+        <button class="fc-btn" onclick="Flashcard.next()">Next &#9654;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MINDMAP MODAL ===== -->
+  <div id="mm-modal" class="modal-overlay hidden" onclick="MindMap.closeOnOverlay(event)">
+    <div class="modal-box mm-box">
+      <button class="modal-close-btn" onclick="MindMap.close()">&#10005;</button>
+      <h2 id="mm-title" class="mm-title"></h2>
+      <div id="mm-container" class="mm-container"></div>
+    </div>
+  </div>
+
+  <!-- ===== PLANET DETAIL MODAL ===== -->
+  <div id="planet-modal" class="modal-overlay hidden" onclick="SpaceModule.closePlanetModal(event)">
+    <div class="modal-box planet-box" id="planet-detail-box">
+      <button class="modal-close-btn" onclick="SpaceModule.closePlanetModal()">&#10005;</button>
+      <div id="planet-detail-content"></div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/1.2.0/skulpt.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/1.2.0/skulpt-stdlib.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/modules/about.js"></script>
+  <script src="js/modules/python.js"></script>
+  <script src="js/modules/math.js"></script>
+  <script src="js/modules/science.js"></script>
+  <script src="js/modules/space.js"></script>
+  <script src="js/modules/karate.js"></script>
+  <script src="js/modules/drawing-learn.js"></script>
+  <script src="js/modules/my-drawings.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
