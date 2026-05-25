@@ -224,6 +224,54 @@ const DATA = {
       xp: 40,
       concept: 'import module adds extra features. random.randint(1,10) picks a number.'
     },
+    {
+      id: 9,
+      title: '🚀 Rocket Safety Check',
+      emoji: '🚀',
+      story: 'Real rockets never launch without fuel! Let\'s build a smart rocket that checks for fuel first — and tells a FUNNY story if the tank is empty. This uses if/else to make decisions!',
+      instruction: 'Run the code. The first time you\'ll meet a sleepy turtle! Then change fuel = 0 to fuel = 5 and run again to BLAST OFF! 🚀',
+      code: '# 🚀 Captain Ahrar\'s Smart Rocket\nfuel = 0   # try changing this to 5 later!\n\ndef start_rocket():\n    # Safety check: do we have fuel?\n    if fuel == 0:\n        print("🐢 The rocket sputtered: putt... putt... pfffft...")\n        print("🐢 A sleepy turtle climbed out of the empty fuel tank!")\n        print("🐢 \'Excuse me, where is the fuel?\' he asked.")\n    else:\n        print("🎯 Mission Control: Launch sequence!")\n        for n in [5, 4, 3, 2, 1]:\n            print("   ..." + str(n) + "...")\n        print("🔥🔥🔥 BLAST OFF! 🚀🚀🚀")\n\nstart_rocket()',
+      expectedOutput: '🐢 The rocket sputtered',
+      hint: 'Functions are defined with def name():. The if statement checks something — if it\'s true, run those lines. else runs different lines.',
+      xp: 45,
+      concept: 'def my_function(): + if/else lets your code make smart decisions and tell stories.'
+    },
+    {
+      id: 10,
+      title: '🥋 Karate Belt Journey',
+      emoji: '🥋',
+      story: 'In karate, you climb a ladder of belts from White (beginner) all the way to Black (master)! Let\'s use a list to track your journey and find your next goal automatically.',
+      instruction: 'Run the code to see your karate path. Then change my_belt = "White" to "Green" or "Brown" and run again — Python finds your next belt for you!',
+      code: '# 🥋 The Karate Belt Path\nbelts = ["White", "Yellow", "Orange", "Green", "Blue", "Purple", "Brown", "Black"]\nmy_belt = "White"   # change this to any belt!\n\n# Find where you are in the belt ladder\nposition = belts.index(my_belt)\nremaining = len(belts) - position - 1\n\nprint("🥋 Current belt: " + my_belt)\nprint("📊 You are #" + str(position + 1) + " of " + str(len(belts)) + " belts")\n\nif my_belt == "Black":\n    print("👑 You are a MASTER! There is no higher belt!")\nelse:\n    next_belt = belts[position + 1]\n    print("🎯 Your next goal: " + next_belt + " belt!")\n    print("⏳ " + str(remaining) + " belts to reach BLACK!")',
+      expectedOutput: '🥋 Current belt: White',
+      hint: 'belts.index("White") returns 0 because White is at position 0. Lists start counting at 0! belts[position + 1] gets the NEXT item.',
+      xp: 50,
+      concept: 'list.index(item) finds where something is. list[n] gets the item at position n.'
+    },
+    {
+      id: 11,
+      title: '🎨 Drawing Gallery',
+      emoji: '🎨',
+      story: 'Every picture you draw goes into your gallery! Let\'s build a list of drawings, add new ones with .append(), then walk through every drawing with a for loop to show them.',
+      instruction: 'Run the code to see your gallery. Then add YOUR OWN drawings with my_drawings.append("...") — try silly ones like "a banana riding a rocket"!',
+      code: '# 🎨 Ahrar\'s Art Gallery\nmy_drawings = []   # start with an empty gallery\n\n# Add some drawings (try adding more of your own!)\nmy_drawings.append("a rocket with googly eyes")\nmy_drawings.append("a karate cat 🐱🥋")\nmy_drawings.append("Mom and Dad on planet Mars")\n# my_drawings.append("YOUR IDEA HERE")\n\n# Safety check: is the gallery empty?\nif len(my_drawings) == 0:\n    print("🖼️ The gallery is empty! Just a sleeping cat 🐱")\nelse:\n    print("🖼️ ===== AHRAR\'S ART GALLERY ===== 🖼️")\n    number = 1\n    for picture in my_drawings:\n        print("  #" + str(number) + ": " + picture)\n        number = number + 1\n    print("🌟 Total masterpieces: " + str(len(my_drawings)))',
+      expectedOutput: '🖼️',
+      hint: 'my_list.append(item) adds something to the end of a list. The for loop walks through every item one by one.',
+      xp: 50,
+      concept: 'list.append(x) adds to a list. for item in list: visits every item.'
+    },
+    {
+      id: 12,
+      title: '🌌 Galaxy Mission Playground',
+      emoji: '🌌',
+      story: '🎊 FINAL MISSION! 🎊 You\'ve learned functions, if/else, lists, and loops — time to combine them ALL into your own Galaxy adventure with rockets 🚀, karate 🥋, and drawing 🎨. This is YOUR sandbox — change the bottom of the code and play forever!',
+      instruction: 'Press Run to see the full mission. Then scroll to the bottom (after "# 🎮 YOUR ADVENTURE") and write your own commands! Try: do_chop(), fill_fuel(3), land_on("Pluto"), draw("a dragon")',
+      code: '# 🌌 AHRAR\'S GALAXY MISSION 🌌\n# Your backpack holds everything you collect!\nbag = {"xp": 0, "fuel": 0, "belt": "White", "art": []}\nBELTS = ["White","Yellow","Orange","Green","Blue","Purple","Brown","Black"]\n\ndef add_xp(n, reason):\n    bag["xp"] = bag["xp"] + n\n    print("✨ +" + str(n) + " XP for " + reason + "! (Total: " + str(bag["xp"]) + ")")\n\ndef fill_fuel(tanks):\n    bag["fuel"] = bag["fuel"] + tanks\n    print("⛽ Glug glug! +" + str(tanks) + " tanks loaded! 🚀")\n    add_xp(5, "fuelling up")\n\ndef launch():\n    if bag["fuel"] == 0:\n        print("🐢 Putt... pfffft... a turtle says \'Where\'s the fuel?\'")\n        return\n    bag["fuel"] = bag["fuel"] - 1\n    print("🔥 5...4...3...2...1... 🚀 BLAST OFF!")\n    add_xp(20, "launching")\n\ndef land_on(planet):\n    print("🪂 Touching down on " + planet + "! Flag planted! 🚩")\n    add_xp(15, "exploring " + planet)\n\ndef do_chop():\n    print("🥋 HI-YAAA! 🪓 A pretend watermelon explodes! 🍉")\n    add_xp(10, "a karate chop")\n\ndef earn_belt():\n    spot = BELTS.index(bag["belt"])\n    if spot == len(BELTS) - 1:\n        print("👑 You are already a BLACK BELT, Master Ahrar!")\n        return\n    bag["belt"] = BELTS[spot + 1]\n    print("🎉 NEW BELT: " + bag["belt"] + "! 🥋")\n    add_xp(50, "earning " + bag["belt"] + " belt")\n\ndef draw(what):\n    bag["art"].append(what)\n    print("🎨 You drew: " + what + " ✏️ 10/10!")\n    add_xp(8, "art")\n\ndef show_bag():\n    print("📜 ===== AHRAR\'S BACKPACK ===== 📜")\n    print("   ✨ XP: " + str(bag["xp"]))\n    print("   ⛽ Fuel: " + str(bag["fuel"]) + " tanks")\n    print("   🥋 Belt: " + bag["belt"])\n    print("   🎨 Drawings: " + str(len(bag["art"])))\n    print("================================")\n\n# 🎮 YOUR ADVENTURE — change anything below!\nprint("👋 Welcome Captain Ahrar! 🌟")\nlaunch()           # fails — no fuel!\nfill_fuel(2)\nlaunch()           # works!\nland_on("Mars")\ndo_chop()\nearn_belt()\ndraw("a rocket with googly eyes")\nshow_bag()',
+      expectedOutput: '👋 Welcome Captain Ahrar',
+      hint: 'Try adding new lines at the bottom! Each function call does something. Combine them like LEGO bricks: fill_fuel(5), launch(), launch(), launch(), land_on("Saturn")...',
+      xp: 100,
+      concept: '🏆 MASTER LEVEL! Dictionaries + lists + functions + if/else + for loops — all working together!'
+    },
   ],
 
   /* ===== PLANETS ===== */
