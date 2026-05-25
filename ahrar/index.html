@@ -223,8 +223,12 @@
   </div>
 
   <!-- SCRIPTS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/1.2.0/skulpt.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/skulpt/1.2.0/skulpt-stdlib.js"></script>
+  <!-- Skulpt: in-browser Python interpreter. Primary CDN: jsdelivr (npm).
+       Fallback: official skulpt.org if jsdelivr fails. -->
+  <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js"
+          onerror="this.onerror=null;this.src='https://skulpt.org/js/skulpt.min.js'"></script>
+  <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt-stdlib.js"
+          onerror="this.onerror=null;this.src='https://skulpt.org/js/skulpt-stdlib.js'"></script>
   <script src="js/data.js"></script>
   <script src="js/modules/about.js"></script>
   <script src="js/modules/python.js"></script>
