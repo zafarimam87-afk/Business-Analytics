@@ -192,7 +192,7 @@ const PhysicsModule = {
     document.getElementById('phd-fact').textContent  = c.fact;
     const detail = document.getElementById('physics-detail');
     detail.style.display = 'block';
-    detail.scrollIntoView({ behavior:'auto', block:'center' });
+    detail.scrollIntoView({ behavior:'instant', block:'center' });
     App.addXP(3);
   },
 

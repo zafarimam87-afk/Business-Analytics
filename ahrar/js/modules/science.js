@@ -184,7 +184,7 @@ const ScienceModule = {
     document.getElementById('ad-fact').textContent  = a.fact;
     const detail = document.getElementById('animal-detail');
     detail.style.display = 'block';
-    detail.scrollIntoView({ behavior:'auto', block:'center' });
+    detail.scrollIntoView({ behavior:'instant', block:'center' });
     App.addXP(3);
   },
 
