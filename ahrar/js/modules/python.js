@@ -319,7 +319,7 @@ const PythonModule = {
         : `${praise[Math.floor(Math.random()*praise.length)]} You earned +${l.xp} XP!`);
       if (isDone) App.addXP(2);
       document.getElementById('py-success-msg').style.display = 'block';
-      document.getElementById('py-success-msg').scrollIntoView({ behavior:'smooth', block:'center' });
+      document.getElementById('py-success-msg').scrollIntoView({ behavior:'auto', block:'center' });
       document.getElementById('py-next-btn').style.display =
         this.currentLesson < DATA.pythonLessons.length-1 ? 'inline-flex' : 'none';
     }

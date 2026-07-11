@@ -200,7 +200,7 @@ const BiologyModule = {
     document.getElementById('bd-fact').textContent  = b.fact;
     const detail = document.getElementById('body-detail');
     detail.style.display = 'block';
-    detail.scrollIntoView({ behavior:'smooth', block:'center' });
+    detail.scrollIntoView({ behavior:'auto', block:'center' });
     App.addXP(3);
   },
 
