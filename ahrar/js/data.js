@@ -72,6 +72,36 @@ const DATA = {
       { q:'What is the largest bird in the world?',   opts:['Eagle','Ostrich','Penguin','Albatross'],    ans:1 },
       { q:'Which insect makes honey?',                opts:['Ant','Butterfly','Bee','Wasp'],             ans:2 },
     ],
+
+    physics: [
+      { q:'What pulls everything down to the ground?',            opts:['Wind','Gravity','Magnets','Sunlight'],            ans:1 },
+      { q:'Which travels faster?',                                opts:['Sound','Light','A rocket','A cheetah'],           ans:1 },
+      { q:'What do magnets pull towards them?',                   opts:['Plastic','Wood','Iron & steel','Paper'],          ans:2 },
+      { q:'A push or a pull that makes things move is called…',   opts:['A force','A spark','A wave','A wish'],            ans:0 },
+      { q:'Why does a balloon stick to your hair after rubbing?', opts:['Glue','Static electricity','Magic','Heat'],       ans:1 },
+      { q:'Sound cannot travel through…',                         opts:['Water','Walls','Air','Empty space'],              ans:3 },
+      { q:'What makes a rainbow?',                                opts:['Paint in the sky','Light bending in raindrops','Coloured clouds','Bird feathers'], ans:1 },
+      { q:'A see-saw is a simple machine called a…',              opts:['Wheel','Pulley','Lever','Spring'],                ans:2 },
+      { q:'What slows a ball rolling on grass?',                  opts:['Friction','Gravity','Wind','Magnetism'],          ans:0 },
+      { q:'Ice melting into water is a change of…',               opts:['Colour','State','Weight','Smell'],                ans:1 },
+      { q:'What gives us light and heat every day?',              opts:['The Moon','The Sun','Clouds','Stars at night'],   ans:1 },
+      { q:'The tiny building blocks of everything are called…',   opts:['Atoms','Crumbs','Pixels','Seeds'],                ans:0 },
+    ],
+
+    biology: [
+      { q:'What pumps blood around your body?',            opts:['Brain','Lungs','Heart','Stomach'],           ans:2 },
+      { q:'What do you use to breathe?',                   opts:['Heart','Lungs','Bones','Ears'],              ans:1 },
+      { q:'Which body part helps you think?',              opts:['Brain','Heart','Muscles','Skin'],            ans:0 },
+      { q:'What is the biggest organ of your body?',       opts:['Heart','Brain','Skin','Liver'],              ans:2 },
+      { q:'What are baby frogs called?',                   opts:['Puppies','Tadpoles','Chicks','Cubs'],        ans:1 },
+      { q:'What do plants need to grow?',                  opts:['Sweets','Sunlight & water','Music','Toys'],  ans:1 },
+      { q:'What protects your brain?',                     opts:['Your hair','Your skull','Your ears','Your hat'], ans:1 },
+      { q:'What do bees collect from flowers?',            opts:['Leaves','Nectar','Water','Seeds'],           ans:1 },
+      { q:'Where do baby birds come from?',                opts:['Eggs','Seeds','Clouds','Nests grow them'],   ans:0 },
+      { q:'What carries messages from your brain to your body?', opts:['Blood','Nerves','Bones','Air'],        ans:1 },
+      { q:'A caterpillar transforms into a…',              opts:['Bee','Bird','Butterfly','Beetle'],           ans:2 },
+      { q:'What are your muscles for?',                    opts:['Thinking','Moving','Breathing','Seeing'],    ans:1 },
+    ],
   },
 
   /* ===== FLASHCARD DECKS ===== */
@@ -123,6 +153,32 @@ const DATA = {
       { f:'Kihon',         b:'Basic techniques — the building blocks of karate. Practising kihon drills builds muscle memory and perfect form.' },
       { f:'Dojo',          b:'The training hall where martial arts are practised. Treat it with respect — shoes off, bow when entering!' },
       { f:'Obi',           b:'The belt worn in karate. Its colour shows your rank and progress on the martial arts journey.' },
+    ],
+
+    physics: [
+      { f:'What is gravity?',            b:'The invisible force that pulls everything down to Earth. It\'s why balls fall, why you stay on the ground, and why the Moon circles Earth!' },
+      { f:'What is a force?',            b:'A push or a pull! Every time you kick a ball, open a door, or do a karate chop — you\'re using a force!' },
+      { f:'What is energy?',             b:'Energy makes things happen! Light, heat, sound, movement and electricity are all kinds of energy. Your food gives YOU energy!' },
+      { f:'What is friction?',           b:'The force that slows things down when they rub together. It\'s why you can\'t slide forever on grass but you CAN on ice — ice has less friction!' },
+      { f:'How fast is light?',          b:'Light is the fastest thing in the universe — 300,000 km per SECOND! It could zoom around Earth 7.5 times in one second!' },
+      { f:'What is sound?',              b:'Sound is a wiggle (vibration) travelling through air! Fast wiggles make high sounds, slow wiggles make low sounds. In space there\'s no air, so no sound!' },
+      { f:'What is a magnet?',           b:'A special metal that pulls iron and steel towards it! Every magnet has a North and South pole. Earth itself is a giant magnet — that\'s how compasses work!' },
+      { f:'What is electricity?',        b:'Tiny particles called electrons zooming through wires! It powers your lights, TV and tablet. Lightning is giant electricity in the sky!' },
+      { f:'What is the quantum world?',  b:'The world of super-tiny particles — smaller than atoms! Down there, particles can be in two places at once and act totally weird. Even scientists find it amazing!' },
+      { f:'What are atoms?',             b:'The tiny building blocks of EVERYTHING — you, water, air, stars! They\'re so small that millions fit inside a full stop.' },
+    ],
+
+    biology: [
+      { f:'What is a cell?',             b:'The tiny building block of all living things! Your body has about 37 TRILLION cells, each doing a special job. They\'re like a huge team working together!' },
+      { f:'What does your heart do?',    b:'It\'s a super-strong muscle that pumps blood around your whole body about 100,000 times a day — and it never takes a break!' },
+      { f:'What does your brain do?',    b:'Your body\'s control centre! It handles thinking, remembering, feeling, moving and dreaming. It uses electricity to send messages at 400 km/h!' },
+      { f:'What do your lungs do?',      b:'They pull in fresh air (oxygen) and push out used air (carbon dioxide). You breathe about 20,000 times every day without even thinking!' },
+      { f:'What is DNA?',                b:'The instruction book inside every cell that makes you YOU! It decides your eye colour, hair and height. If you unravelled all your DNA it would reach the Sun and back 600 times!' },
+      { f:'What are muscles?',           b:'The body parts that let you move, jump and do karate! You have over 600 muscles. Your strongest one for its size is in your jaw!' },
+      { f:'What is a skeleton?',         b:'The frame of 206 bones holding your body up! Without it you\'d be a floppy blob. Bones are alive and can heal themselves when broken!' },
+      { f:'What is blood for?',          b:'Blood is the body\'s delivery truck! It carries oxygen and food to every cell, and takes away rubbish. Your heart pumps 7,500 litres of it every day!' },
+      { f:'What are germs?',             b:'Tiny living things (too small to see) that can make you ill. Washing your hands with soap destroys them — that\'s your superpower against germs!' },
+      { f:'What is a food chain?',       b:'Who eats what in nature! Grass → rabbit → fox. Every living thing is connected. Plants start most food chains using sunlight!' },
     ],
   },
 
@@ -442,6 +498,56 @@ const DATA = {
     { name:'Bat',        emoji:'🦇', type:'Mammal',  fact:'The only mammal that truly flies! Uses echolocation to navigate in complete darkness. Can eat 1,000 mosquitoes in an hour!' },
   ],
 
+  /* ===== PHYSICS CONCEPTS ===== */
+  physicsConcepts: [
+    { name:'Gravity',          emoji:'🍎', type:'Force',        fact:'The invisible pull that keeps your feet on the ground and makes apples fall from trees! The bigger something is, the stronger its gravity. The Moon\'s gravity is 6× weaker — you could jump 6× higher there!' },
+    { name:'Magnetism',        emoji:'🧲', type:'Force',        fact:'Magnets pull iron and steel without touching them — like an invisible hand! Every magnet has a North and South pole. Opposite poles attract, same poles push away. Earth is a giant magnet!' },
+    { name:'Light',            emoji:'💡', type:'Energy',       fact:'The fastest thing in the universe — 300,000 km every second! Light from the Sun takes 8 minutes to reach us. White light is secretly ALL colours mixed together — a rainbow proves it!' },
+    { name:'Sound',            emoji:'🔊', type:'Energy',       fact:'Sound is air wiggling super fast! When you talk, your throat vibrates the air, and ears catch the wiggles. Sound can\'t travel in space — an explosion there would be totally silent!' },
+    { name:'Electricity',      emoji:'⚡', type:'Energy',       fact:'Tiny particles called electrons racing through wires at nearly light speed! Lightning is a giant electric spark jumping from cloud to ground — hotter than the surface of the Sun!' },
+    { name:'Friction',         emoji:'👟', type:'Force',        fact:'The force that slows sliding things. Rough things = lots of friction, smooth things = little friction. It\'s why ice is slippery and why rubbing your hands makes them warm!' },
+    { name:'Energy',           emoji:'🔋', type:'The mover',    fact:'Energy makes EVERYTHING happen — moving, glowing, growing! It never disappears, it just changes form: food energy becomes karate-kick energy, battery energy becomes light!' },
+    { name:'Heat',             emoji:'🔥', type:'Energy',       fact:'Heat is atoms jiggling! The faster they jiggle, the hotter things get. Cold isn\'t a thing — it\'s just LESS jiggling. At -273°C atoms almost stop completely (scientists call it absolute zero)!' },
+    { name:'Floating & Sinking', emoji:'🛟', type:'Buoyancy',   fact:'Things float when they\'re lighter than the water they push aside! A giant steel ship floats because it\'s full of air. A tiny coin sinks because it\'s heavy for its size.' },
+    { name:'Quantum World',    emoji:'⚛️', type:'Tiny physics', fact:'The rules for SUPER-tiny particles smaller than atoms! Down there, particles can be in two places at once, teleport through walls, and act like waves. It\'s real — and even Einstein found it spooky!' },
+    { name:'Rainbows',         emoji:'🌈', type:'Light magic',  fact:'When sunlight passes through raindrops, the drops bend each colour differently — splitting white light into red, orange, yellow, green, blue, indigo and violet. You can make one with a garden hose on a sunny day!' },
+    { name:'Simple Machines',  emoji:'⚙️', type:'Helpers',      fact:'Levers, wheels, ramps and pulleys make hard jobs easy! A see-saw is a lever. Ancient Egyptians used ramps to build the pyramids. Machines don\'t give you more strength — they make your strength go further!' },
+  ],
+
+  /* ===== PHYSICS HOME EXPERIMENTS ===== */
+  physicsExperiments: [
+    { name:'Balloon Hair Magic',     emoji:'🎈', needs:'A balloon + your hair',           steps:'Rub a balloon on your hair 10 times, then hold it near small paper bits. They JUMP onto the balloon! You made static electricity — the same thing as tiny lightning!' },
+    { name:'Sink or Float Lab',      emoji:'🛁', needs:'Bowl of water + small objects',   steps:'Guess first, then test: coin, cork, LEGO, apple, spoon. Apples float — they\'re 25% air! Write down your guesses and see how many you got right.' },
+    { name:'Paper Plane Forces',     emoji:'✈️', needs:'Paper',                           steps:'Make 2 planes: one with big wings, one with tiny wings. Throw them the same way. Which flies further? You\'re testing LIFT vs GRAVITY — real rocket scientists do this!' },
+    { name:'Magnet Treasure Hunt',   emoji:'🧲', needs:'A fridge magnet',                 steps:'Walk around your home touching the magnet to things. What sticks? Make two lists: MAGNETIC vs NOT. Surprise: not all shiny metals stick — try a coin!' },
+    { name:'Shadow Puppet Theatre',  emoji:'🖐️', needs:'A torch + dark room',            steps:'Shine the torch at the wall and make hand shapes. Move your hand CLOSER to the torch — the shadow grows HUGE! Light travels in straight lines, so your hand blocks it.' },
+    { name:'String Telephone',       emoji:'📞', needs:'2 paper cups + long string',      steps:'Poke a hole in each cup, tie the string between them, pull it TIGHT. Whisper into one cup while someone listens at the other. Sound wiggles travel down the string!' },
+  ],
+
+  /* ===== BIOLOGY: HUMAN BODY PARTS ===== */
+  bodyParts: [
+    { name:'Heart',    emoji:'❤️', type:'The pump',        fact:'A muscle the size of your fist that beats 100,000 times a day, pumping blood to every corner of your body. It never rests — even when you sleep! Exercise makes it stronger.' },
+    { name:'Brain',    emoji:'🧠', type:'Control centre',  fact:'Your body\'s boss! It controls thinking, moving, feeling and dreaming using electric signals that zoom at 400 km/h. It\'s 75% water and uses 20% of your energy — thinking is hard work!' },
+    { name:'Lungs',    emoji:'🫁', type:'Air balloons',    fact:'Two spongy balloons that fill with air 20,000 times a day! They grab oxygen and send it to your blood. Spread flat, their inside surface would cover a tennis court!' },
+    { name:'Bones',    emoji:'🦴', type:'The frame',       fact:'You have 206 bones — babies are born with 300 that join together! Bones are 4× stronger than concrete but light enough to let you jump. They make blood inside them!' },
+    { name:'Muscles',  emoji:'💪', type:'The movers',      fact:'Over 600 muscles let you run, jump and karate-chop! They work in pairs — one pulls while the other relaxes. Your heart is a muscle too, and so is your tongue!' },
+    { name:'Blood',    emoji:'🩸', type:'Delivery truck',  fact:'Your body\'s river! It delivers oxygen and food to 37 trillion cells and carries rubbish away. A drop of blood contains 5 MILLION red blood cells. It travels 19,000 km of blood vessels!' },
+    { name:'Skin',     emoji:'🖐️', type:'The armour',      fact:'Your BIGGEST organ! It\'s waterproof, heals itself, feels touch and keeps germs out. You shed 40,000 dead skin cells every minute — and grow new ones!' },
+    { name:'Stomach',  emoji:'🍎', type:'Food mixer',      fact:'A stretchy bag that churns your food with acid strong enough to dissolve metal! Its slimy lining protects it. Food spends about 4 hours being mixed there before moving on.' },
+    { name:'Eyes',     emoji:'👀', type:'The cameras',     fact:'Your eyes can tell apart 10 MILLION colours! They send upside-down pictures to your brain, which flips them the right way up. You blink 15-20 times a minute to keep them clean.' },
+    { name:'Ears',     emoji:'👂', type:'Sound catchers',  fact:'Ears catch sound wiggles and turn them into brain signals — using the 3 smallest bones in your body (smaller than rice grains)! Ears also help you balance so you don\'t fall over.' },
+    { name:'DNA',      emoji:'🧬', type:'Instruction book',fact:'The recipe that makes you YOU, coiled inside every cell! It\'s written in a 4-letter code (A, T, G, C). Unravelled, your body\'s DNA would stretch to the Sun and back 600 times!' },
+    { name:'Cells',    emoji:'🦠', type:'Building blocks', fact:'You\'re built from 37 TRILLION tiny living blocks! Each has a job: blood cells deliver, nerve cells message, muscle cells pull. New cells replace old ones all the time — you\'re always rebuilding!' },
+  ],
+
+  /* ===== BIOLOGY: LIFE CYCLES ===== */
+  lifeCycles: [
+    { name:'Butterfly', emoji:'🦋', stages:['🥚 Egg on a leaf','🐛 Hungry caterpillar','🛌 Chrysalis (transforming!)','🦋 Beautiful butterfly'], fact:'Inside the chrysalis, the caterpillar completely dissolves into goo and rebuilds itself as a butterfly. Real-life transformation power!' },
+    { name:'Frog',      emoji:'🐸', stages:['🥚 Eggs in water (frogspawn)','🐟 Tadpole with a tail','🦵 Froglet growing legs','🐸 Adult frog'], fact:'Tadpoles breathe underwater with gills like fish, then grow lungs and legs to live on land. They eat their own tail as they grow — recycling!' },
+    { name:'Plant',     emoji:'🌻', stages:['🌰 Seed in the soil','🌱 Sprout reaching up','🌿 Growing leaves','🌻 Flower making new seeds'], fact:'A sunflower can grow 30 cm in a single week and always turns its face to follow the Sun across the sky!' },
+    { name:'Chicken',   emoji:'🐔', stages:['🥚 Egg (21 days inside)','🐣 Chick hatching','🐤 Fluffy chick growing','🐔 Adult chicken'], fact:'A chick grows a special "egg tooth" on its beak just to crack its way out of the shell — then the tooth falls off!' },
+  ],
+
   /* ===== SPACE FUN FACTS ===== */
   spaceFacts: [
     { icon:'🌡️', text:'Venus is hotter than Mercury despite being farther from the Sun — its thick clouds trap heat like a greenhouse.' },
@@ -476,6 +582,26 @@ const DATA = {
         { label:'Human Body',  color:'#A855F7', x:20, y:50,  children:['Heart','Brain','Bones','Muscles'] },
       ]
     },
+    physics: {
+      title:'Physics Mind Map',
+      center: { label:'Physics ⚛️', color:'#00E5FF' },
+      nodes: [
+        { label:'Forces 💪',   color:'#EF4444', x:50, y:15,  children:['Gravity','Push & Pull','Friction','Magnets'] },
+        { label:'Energy ⚡',   color:'#F59E0B', x:80, y:50,  children:['Light','Sound','Heat','Electricity'] },
+        { label:'Matter 🧊',   color:'#3B82F6', x:50, y:82,  children:['Solids','Liquids','Gases','Atoms'] },
+        { label:'Quantum ⚛️',  color:'#A855F7', x:20, y:50,  children:['Tiny particles','Photons','Wave magic','Weird rules!'] },
+      ]
+    },
+    biology: {
+      title:'Biology Mind Map',
+      center: { label:'Biology 🧬', color:'#8BC34A' },
+      nodes: [
+        { label:'Human Body',  color:'#EF4444', x:50, y:15,  children:['Heart','Brain','Lungs','Bones','Muscles'] },
+        { label:'Cells 🦠',    color:'#F59E0B', x:80, y:50,  children:['DNA','37 trillion!','Blood cells','Nerve cells'] },
+        { label:'Life Cycles', color:'#3B82F6', x:50, y:82,  children:['Egg','Tadpole','Caterpillar','Butterfly'] },
+        { label:'Nature 🌿',   color:'#22C55E', x:20, y:50,  children:['Food chains','Plants','Habitats','Germs'] },
+      ]
+    },
   },
 
   /* ===== LEVEL NAMES ===== */
@@ -499,5 +625,8 @@ const DATA = {
     { id:'drawing_done',  emoji:'🎨', title:'Little Artist',     desc:'Completed a drawing tutorial',                 condition: s => (s.tutorialsDone||0) >= 1 },
     { id:'xp_100',        emoji:'⚡', title:'Energised!',        desc:'Earned 100 XP',                               condition: s => (s.xp||0) >= 100 },
     { id:'xp_500',        emoji:'🌠', title:'Star Earner',       desc:'Earned 500 XP',                               condition: s => (s.xp||0) >= 500 },
+    { id:'python_galaxy', emoji:'🌌', title:'Galaxy Coder',      desc:'Completed ALL 12 Python missions!',            condition: s => (s.pythonLesson||0) >= 12 },
+    { id:'physics_fan',   emoji:'⚛️', title:'Little Physicist',  desc:'Explored the Physics Lab',                     condition: s => ((s.moduleVisits||{})['physics']||0) >= 1 },
+    { id:'biology_fan',   emoji:'🧬', title:'Body Explorer',     desc:'Explored the Biology Lab',                     condition: s => ((s.moduleVisits||{})['biology']||0) >= 1 },
   ],
 };

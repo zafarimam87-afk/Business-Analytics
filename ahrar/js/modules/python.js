@@ -12,7 +12,7 @@ const PythonModule = {
     container.innerHTML = `
       <div class="module-header fade-up">
         <h2 style="color:#00FF88">🐍 Python Coder</h2>
-        <p>Learn Python with fun missions! Each lesson earns XP.</p>
+        <p>Teach the computer to do amazing things! Every mission earns XP — and mistakes are how real coders learn. 💪</p>
       </div>
 
       <div class="card mb-24 fade-up" style="border-color:rgba(0,255,136,0.2)">
@@ -68,12 +68,13 @@ const PythonModule = {
             <span class="editor-title">📝 Code Editor</span>
             <div class="editor-btns">
               <button class="btn btn-warning" style="padding:6px 14px;font-size:0.8rem" onclick="PythonModule.showHint()">💡 Hint</button>
+              <button class="btn btn-primary" style="padding:6px 14px;font-size:0.8rem" onclick="PythonModule.toggleCheatSheet()">🪄 Magic Words</button>
               <button class="btn btn-success" style="padding:6px 14px;font-size:0.8rem" onclick="PythonModule.runCode()">▶ Run Code</button>
             </div>
           </div>
           <textarea id="python-editor" spellcheck="false" autocorrect="off" autocapitalize="off" placeholder="# Write your Python code here..."></textarea>
           <div class="editor-footer">
-            <button class="btn btn-success" onclick="PythonModule.runCode()">▶ Run Code</button>
+            <button class="btn btn-success" style="font-size:1rem;padding:12px 28px" onclick="PythonModule.runCode()">▶ RUN MY CODE! 🚀</button>
             <button class="btn btn-danger" style="background:rgba(239,68,68,0.2);border:1px solid rgba(239,68,68,0.3)" onclick="PythonModule.clearCode()">🗑 Clear</button>
             <button class="btn btn-primary" style="padding:8px 14px;font-size:0.8rem" onclick="PythonModule.loadStarterCode()">📋 Load Example</button>
           </div>
@@ -81,6 +82,40 @@ const PythonModule = {
 
         <div class="hint-box" id="py-hint">
           <p id="py-hint-text"></p>
+        </div>
+
+        <!-- MAGIC WORDS CHEAT SHEET -->
+        <div id="py-cheatsheet" style="display:none;margin-bottom:16px" class="card">
+          <div style="font-weight:900;color:#00FF88;margin-bottom:12px;font-size:1.05rem">🪄 Magic Words — Python Spell Book</div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;font-size:0.85rem">
+            <div style="background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2);border-radius:10px;padding:10px">
+              <code style="color:#00FF88">print("hello")</code>
+              <div style="color:var(--text-dim);margin-top:4px">📢 Makes the computer SAY something</div>
+            </div>
+            <div style="background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2);border-radius:10px;padding:10px">
+              <code style="color:#00FF88">name = "Ahrar"</code>
+              <div style="color:var(--text-dim);margin-top:4px">📦 Puts something in a labelled box</div>
+            </div>
+            <div style="background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2);border-radius:10px;padding:10px">
+              <code style="color:#00FF88">if fuel == 0:</code>
+              <div style="color:var(--text-dim);margin-top:4px">🤔 Asks a question — do this ONLY if true</div>
+            </div>
+            <div style="background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2);border-radius:10px;padding:10px">
+              <code style="color:#00FF88">for i in range(5):</code>
+              <div style="color:var(--text-dim);margin-top:4px">🔁 Repeats code 5 times — no copy-paste!</div>
+            </div>
+            <div style="background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2);border-radius:10px;padding:10px">
+              <code style="color:#00FF88">def my_spell():</code>
+              <div style="color:var(--text-dim);margin-top:4px">⚙️ Creates your OWN magic word!</div>
+            </div>
+            <div style="background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2);border-radius:10px;padding:10px">
+              <code style="color:#00FF88">toys = ["car", "ball"]</code>
+              <div style="color:var(--text-dim);margin-top:4px">📋 A list — one box holding many things</div>
+            </div>
+          </div>
+          <div style="margin-top:12px;padding:10px;background:rgba(255,215,0,0.08);border:1px solid rgba(255,215,0,0.25);border-radius:10px;font-size:0.82rem">
+            ⚠️ <b>Top secret coder rules:</b> Python words are always <b>lowercase</b> (print, not Print!) · Text needs <b>"quotes"</b> · Lines inside if/for/def start with <b>4 spaces</b>
+          </div>
         </div>
 
         <div class="section-heading">💻 Output</div>
@@ -160,6 +195,57 @@ const PythonModule = {
     document.getElementById('py-hint').classList.toggle('visible');
   },
 
+  toggleCheatSheet() {
+    const cs = document.getElementById('py-cheatsheet');
+    cs.style.display = cs.style.display === 'none' ? 'block' : 'none';
+  },
+
+  /* Turn scary Python errors into friendly kid language */
+  friendlyError(err) {
+    const raw = err.toString();
+    const line = (raw.match(/line (\d+)/) || [])[1];
+    const where = line ? ` (look at line ${line})` : '';
+    let msg;
+
+    if (/ParseError|SyntaxError|bad input|EOF/.test(raw)) {
+      msg = `🤔 Oops! Python got a bit confused${where}.\n\n` +
+            `🔍 Detective checklist:\n` +
+            `  • Are your quote marks in pairs? "like this"\n` +
+            `  • Are your brackets in pairs? (like this)\n` +
+            `  • Did you forget a : at the end of an if/for/def line?`;
+    } else if (/NameError/.test(raw)) {
+      const word = (raw.match(/name '([^']+)'/) || [])[1];
+      msg = `🔍 Python doesn't know the word${word ? ` "${word}"` : ''}${where}!\n\n` +
+            `💡 Remember:\n` +
+            `  • Python words are lowercase: print ✅  Print ❌\n` +
+            `  • Text needs quotes: print("hello") ✅  print(hello) ❌\n` +
+            `  • Check your spelling — computers can't guess!`;
+    } else if (/IndentationError|expected an indented block/.test(raw)) {
+      msg = `📏 The spaces at the start of lines matter${where}!\n\n` +
+            `💡 Lines inside if, for or def need exactly 4 spaces at the start:\n` +
+            `  if fuel == 0:\n` +
+            `      print("no fuel!")  ← 4 spaces before print`;
+    } else if (/TypeError/.test(raw)) {
+      msg = `🔀 Python got mixed up joining different things${where}!\n\n` +
+            `💡 To join text and numbers, wrap the number in str():\n` +
+            `  print("I am " + str(7))  ✅`;
+    } else if (/ZeroDivision/.test(raw)) {
+      msg = `😵 Whoa! You can't divide by zero — not even a supercomputer can!\n\nTry dividing by a different number.`;
+    } else if (/TimeLimitError|execLimit/.test(raw)) {
+      msg = `⏰ Your code ran for too long — it might be stuck in a loop that never ends!\n\n💡 Check your loop has a way to finish.`;
+    } else {
+      msg = `🤖 Something surprised Python${where}!\n\n💡 Try the 💡 Hint button, or press 📋 Load Example to start fresh.`;
+    }
+
+    const cheers = [
+      '💪 Mistakes make your brain grow — every great coder sees errors all day!',
+      '🌟 Bug hunting is a coder superpower. You can find it!',
+      '🚀 Even NASA engineers fix errors every day. Keep going!',
+      '🥋 A black belt is a white belt who never gave up. Try again!',
+    ];
+    return msg + '\n\n' + cheers[Math.floor(Math.random() * cheers.length)];
+  },
+
   showLocked() {
     App.showToast('🔒','Complete the previous lesson to unlock this one!');
   },
@@ -195,13 +281,13 @@ const PythonModule = {
     ).then(() => {
       this.checkOutput(out.trim());
     }).catch(err => {
-      output.textContent = '❌ Error: ' + err.toString().replace('ParseError:','').replace('NameError:','Name Error:');
+      output.textContent = this.friendlyError(err);
       output.classList.add('output-error');
     });
   },
 
   runFallback(code, output) {
-    output.textContent = '⚠️ Python runner loading… Try refreshing the page or check your internet connection.\n\nYour code looks good though — once the Python engine loads, hit Run again!';
+    output.textContent = '🔌 The Python engine is still waking up!\n\n1. Check you are connected to the internet 📶\n2. Refresh the page (press F5)\n3. Press RUN again — your code is safe!';
   },
 
   checkOutput(actual) {
@@ -220,10 +306,20 @@ const PythonModule = {
         App.checkAchievement();
         App.saveState();
       }
+      const praise = [
+        '🌟 AMAZING! You just talked to a computer — and it listened!',
+        '🚀 WOW! Real coding power! NASA would be proud!',
+        '🥋 HI-YA! You karate-chopped that mission!',
+        '🧠 Your coder brain is growing bigger!',
+        '⚡ Super speedy! You are becoming unstoppable!',
+      ];
       const detail = document.getElementById('py-success-detail');
-      detail.textContent = isDone ? 'Already completed! Review done. +2 XP' : `You earned +${l.xp} XP!`;
+      detail.textContent = (isDone
+        ? 'Already completed — great practice! +2 XP'
+        : `${praise[Math.floor(Math.random()*praise.length)]} You earned +${l.xp} XP!`);
       if (isDone) App.addXP(2);
       document.getElementById('py-success-msg').style.display = 'block';
+      document.getElementById('py-success-msg').scrollIntoView({ behavior:'smooth', block:'nearest' });
       document.getElementById('py-next-btn').style.display =
         this.currentLesson < DATA.pythonLessons.length-1 ? 'inline-flex' : 'none';
     }

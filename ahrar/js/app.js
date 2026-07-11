@@ -20,6 +20,8 @@ const App = {
     'python':        { module: PythonModule,      name: 'Python Coder',   emoji: '🐍' },
     'math':          { module: MathModule,        name: 'Math Adventure', emoji: '🔢' },
     'science':       { module: ScienceModule,     name: 'Science Lab',    emoji: '🔬' },
+    'physics':       { module: PhysicsModule,     name: 'Physics Lab',    emoji: '⚛️' },
+    'biology':       { module: BiologyModule,     name: 'Biology Lab',    emoji: '🧬' },
     'space':         { module: SpaceModule,       name: 'Space Explorer', emoji: '🚀' },
     'karate':        { module: KarateModule,      name: 'Karate Dojo',    emoji: '🥋' },
     'drawing-learn': { module: DrawingLearnModule,name: 'Drawing Studio', emoji: '✏️' },
